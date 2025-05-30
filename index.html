@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="en" oncontextmenu="return false"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="lFSwTYdp3wWKDPeLUmJOKzriaePDwpwl7vv24hAmdjQ">
+    <title>Blessing's Portfolio</title>
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <style>
+#loadingModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 9999;
+}
+
+/* Small centered box with background */
+#loadingModal .modal-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px);
+  padding: 25px 35px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Spinner */
+#loadingModal .spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid pink;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loadingModal .modal-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div id="loadingModal">
+  <div class="modal-content">
+    <div class="spinner"></div>
+    <div class="modal-text">Please wait...</div>
+  </div>
+</div>
+
+
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-trans">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#">Blessing</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="images/menu.svg" alt="Menu">
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <!-- Optional Nav Items on Left -->
+      </ul>
+      <div class="d-flex my-2 my-lg-0 top_link">
+        <a href="#projects" class="nav-link text-white">Projects</a>
+        <a href="#contact" class="nav-link text-white">Contact</a>
+        <a href="resume/Blessing Obulor CV.pdf" download class="nav-link text-white">Resume</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+ <!-- Page Body -->
+  
+    <!-- preloader display -->
+    <div id="preloader" style="display: none;">
+      <div id="loader"></div>
+    </div>
+
+    <!-- website content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <center>
+            <div class="col-md-12 header mb-5 intro-height">
+              <h1 class="mt-header text-white">Blessing Obulor</h1>
+              <p class="mt-1 text-white">
+                I'm a <b id="typed-output" style="color: pink"></b>, I build dynamic, responsive, and scalable web apps optimized for performance and user experience across all platforms
+              </p>
+
+              <div class="mt-5 accounts">
+                <a href="https://www.linkedin.com/in/blessing-obulor-462b80212" class="text-white" target="”_blank”">
+                  <img class="drag" src="images/linkedin.svg" alt="">
+                  LinkedIn</a>
+                <a href="https://github.com/Blessingobulor" class="m-4 text-white" target="”_blank”">
+                  <img class="drag" src="images/github.svg" alt=""> Github</a>
+              </div>
+            </div>
+          </center>
+        </div>
+
+        <div class="selected-title" id="projects">
+          <center>
+            <hr width="10px" class="bg-white">
+            <h6 class="text-white">PROJECTS</h6>
+            <hr width="10px" class="bg-white">
+          </center>
+        </div>
+      
+      <!-- first project -->
+        <div class="row mt-5">
+          <div class="col-md-5">
+            <h5 class="text-pink">Solar Load Estimator</h5>
+            <div class="project-tags">
+              <div class="tags">Web development</div>
+              <div class="tags m-2">Laravel</div>
+              <div class="tags m-2">PHP</div>
+              <div class="tags m-1">Mysql</div>
+              <div class="tags m-2">Html</div>
+              <div class="tags m-2">Css</div>
+              <div class="tags m-2">Javascript</div>
+            </div>
+
+            <p class="text-white mt-2 h7">
+              The Solar Load Estimator helps users determine the ideal solar setup for their homes or businesses. Users can select appliances, specify quantities, and the system automatically calculates total power consumption Users can download a detailed quote for decision-making
+            </p>
+
+            <button class="mt-3 details-btn" onclick="link('calculator.novelsolar.com')">
+              View live project
+            </button>
+
+            <br>
+            <br>
+
+            <a href="https://github.com/Blessingobulor/Solar-Load-Estimator">
+              <img height="30" width="30" class="me-2" src="images/github.svg" alt="">
+            </a>
+
+          </div>
+          <div class="col-md-7">
+            <div class="shadow" style="width: 100%; height: 100%">
+              <center>
+                <img class="mt-3" src="images/solar-estimator.png" alt="" draggable="false" width="100%" height="100%" style="border-radius: 8px"> 
+              </center>
+            </div>
+          </div>
+
+          <!-- second project -->
+
+          <div class="mt-5"><br><br><br></div>
+
+    <!-- Third project -->
+      <div class="mt-5"><br><br><br></div>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="shadow" style="width: 100%; height: 100%; border-radius: 20px">
+            <center>
+              <img class="mt-3 rounded" src="images/stock_reconsilation_system_mockup.png" draggable="false" width="100%" height="100%">
+            </center>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <h5 class="text-pink">Stock Reconsilation System</h5>
+          <div class="project-tags">
+            <div class="tags">Web development</div>
+            <div class="tags m-2">PHP</div>
+            <div class="tags m-1">Mysql</div>
+            <div class="tags m-2">Html</div>
+            <div class="tags m-2">Css</div>
+            <div class="tags m-2">Javascript</div>
+          </div>
+          <p class="text-white mt-2 h7">
+            The Stock Reconciliation System Software is a comprehensive tool designed to simplify and automate stock management processes. It empowers users by: Seamlessly tracking stock movements. Automatically calculating inventory levels
+          </p>
+          <br>
+          <a href="https://github.com/Blessingobulor/stock-reconciliation-system" target="_blank" class="mt-3 details-btn" style="text-decoration: none;">
+            View live project
+          </a>
+
+          <br><br><br>
+          <a href="https://github.com/Blessingobulor/stock-reconciliation-system">
+            <img height="30" width="30" class="me-2" src="images/github.svg" alt="">
+          </a>
+        </div>
+      </div>
+
+          
+          <div class="selected-title" id="contact">
+            <center class="mt-5">
+              <span class="text-white h6"><b>CONTACT</b></span>
+            </center>
+          </div>
+
+          <div class="col-md-6">
+            <h3 class="text-white">Leave a message for me →</h3>
+            <br>
+            <h6 class="text-white">I don't waste time to reply</h6>
+          </div>
+
+          <div class="col-md-6">
+              <form id="contactForm" action="https://formspree.io/f/mzzrqwkp" method="POST" onsubmit="return redirectToThankYou(event)">
+                <div class="form-group">
+                  <input class="contact-inp" type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group mt-3">
+                  <input class="contact-inp" type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="contact-inp" name="message" placeholder="Your message" rows="10" required></textarea>
+                </div>
+                <div class="form-group">
+                  <button id="submitBtn" type="submit" class="sub-btn rounded mt-3 shadow">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+        </div>
+
+        <hr class="mt-5 bg-white">
+      </div>
+
+
+      <!-- back to top button -->
+      <button id="back-to-top" class="hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+          <path d="M12 24c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12zm0-22c-5.524 0-10 4.476-10 10s4.476 10 10 10 10-4.476 10-10-4.476-10-10-10zm0 15h-2v-7h-3l5-5 5 5h-3z"></path>
+        </svg>
+      </button>
+    </div>
+
+
+    <!-- Modal Ends -->
+  
+
+  <footer class="container mb-3">
+    <center class="text-white h6">
+      <span>© <span id="year">2025</span></span>
+    </center>
+  </footer>
+            
+
+<script src="js/bootstrap.bundle.min_1.js" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+  window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+
+      new Typed("#typed-output", {
+        strings: ["Fullstack Laravel PHP Developer"],
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1000,
+        startDelay: 500,
+        loop: false,
+      });
+
+      const backToTopButton = document.getElementById("back-to-top");
+      window.addEventListener("scroll", () => {
+        backToTopButton.style.display = window.pageYOffset > 100 ? "block" : "none";
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    function link(link) {
+      window.open("https://" + link);
+    }
+
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    // Show loading modal and submit form via fetch, then redirect on success
+    function redirectToThankYou(event) {
+      event.preventDefault();
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+      const loadingModal = document.getElementById("loadingModal");
+
+      loadingModal.style.display = 'flex';  // Show loading
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          // Wait a moment to let users see loader, then redirect
+          setTimeout(() => {
+            window.location.href = 'thanks.html';
+          }, 1500);
+        } else {
+          response.json().then(data => {
+            alert(data.error || "Oops! Something went wrong.");
+            loadingModal.style.display = 'none';
+          });
+        }
+      }).catch(error => {
+        alert("Oops! Something went wrong. Please try again later.");
+        console.error('Form submission error:', error);
+        loadingModal.style.display = 'none';
+      });
+
+      return false; // Prevent default form submit
+    }
+
+        // Show modal
+    document.getElementById("loadingModal").style.display = "block";
+
+    // Hide modal
+    document.getElementById("loadingModal").style.display = "none";
+
+
+  document.addEventListener('click', function (event) {
+    const navbar = document.getElementById('collapsibleNavId');
+    const toggler = document.querySelector('.navbar-toggler');
+
+    const isClickInsideNav = navbar.contains(event.target) || toggler.contains(event.target);
+
+    if (!isClickInsideNav && navbar.classList.contains('show')) {
+      // Collapse the navbar
+      const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+      bsCollapse.hide();
+    }
+  });
+
+</script>
+</body></html>
