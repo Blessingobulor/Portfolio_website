@@ -9,36 +9,14 @@
   </head>
 
   <style>
-#loadingModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  z-index: 9999;
-}
-
-/* Small centered box with background */
-#loadingModal .modal-content {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(3px);
-  padding: 25px 35px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
 
 /* Spinner */
 #loadingModal .spinner {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid pink;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid pink;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   animation: spin 1s linear infinite;
 }
 
@@ -48,22 +26,46 @@
 }
 
 #loadingModal .modal-text {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #444;
 }
 
+#loadingModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Toggle via JS */
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+/* More compact modal content box */
+#loadingModal .modal-content {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px;
+  text-align: center;
+}
 
   </style>
 </head>
 <body>
 
-  <div id="loadingModal">
+ <div id="loadingModal">
   <div class="modal-content">
     <div class="spinner"></div>
-    <div class="modal-text">Please wait...</div>
+    <div class="modal-text">Loading, please wait...</div>
   </div>
 </div>
+
 
 
 
@@ -251,7 +253,30 @@
 
 
     <!-- Modal Ends -->
-  
+
+  <!-- WhatsApp Floating Button using Bootstrap -->
+<a href="https://wa.me/2347068204587?text=Hello%20Blessing%2C%20I%20just%20viewed%20your%20portfolio%20and%20would%20like%20you%20to%work%20on%20a%20project%20for%20me." 
+   class="btn btn-success rounded-circle position-fixed d-flex align-items-center justify-content-center shadow" 
+   style="width: 60px; height: 60px; bottom: 20px; right: 20px; z-index: 1050; animation: bounce 2s infinite;" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+  <img src="images/icon.png" alt="WhatsApp" width="30" height="30">
+</a>
+
+
+<!-- Animation Keyframes -->
+<style>
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+</style>
+
+<!-- ends here-->
 
   <footer class="container mb-3">
     <center class="text-white h6">
@@ -328,12 +353,6 @@
       return false; // Prevent default form submit
     }
 
-        // Show modal
-    document.getElementById("loadingModal").style.display = "block";
-
-    // Hide modal
-    document.getElementById("loadingModal").style.display = "none";
-
 
   document.addEventListener('click', function (event) {
     const navbar = document.getElementById('collapsibleNavId');
@@ -348,5 +367,11 @@
     }
   });
 
+
+  document.getElementById('loadingModal').style.display = 'block';
+  document.getElementById('loadingModal').style.display = 'none';
+
 </script>
-</body></html>
+</body>
+
+</html>
