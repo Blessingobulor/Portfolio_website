@@ -106,7 +106,7 @@
             <div class="col-md-12 header mb-5 intro-height">
               <h1 class="mt-header text-white">Blessing Obulor</h1>
               <p class="mt-1 text-white">
-                I'm a <b id="typed-output" style="color: pink"></b>, I build dynamic, responsive, and scalable web apps optimized for performance and user experience across all platforms
+                I'm a <b id="typed-output" style="color: pink"></b>, I build dynamic, responsive, and scalable web and mobile applications using Laravel and Flutter — optimized for performance and user experience across all platforms.
               </p>
 
               <div class="mt-5 accounts">
@@ -290,18 +290,24 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
+<!--typed ouput animation-->
 <script>
   window.addEventListener("load", () => {
       document.getElementById("preloader").style.display = "none";
 
-      new Typed("#typed-output", {
-        strings: ["Fullstack Laravel PHP Developer"],
-        typeSpeed: 50,
-        backSpeed: 25,
-        backDelay: 1000,
-        startDelay: 500,
-        loop: false,
-      });
+  new Typed("#typed-output", {
+  strings: [
+    'Full-Stack Laravel PHP Developer <span style="color:#00bcd4;">and Junior Flutter Developer</span>'
+  ],
+  typeSpeed: 50,
+  backSpeed: 25,
+  backDelay: 1000,
+  startDelay: 500,
+  loop: true,
+  html: true,
+});
+
+// back to the top arrow
 
       const backToTopButton = document.getElementById("back-to-top");
       window.addEventListener("scroll", () => {
