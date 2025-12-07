@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="lFSwTYdp3wWKDPeLUmJOKzriaePDwpwl7vv24hAmdjQ">
+  <title>Blessing Obulor Portfolio</title>
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Spinner */
+    #loadingModal .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid pink;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #loadingModal .modal-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #444;
+    }
+
+    #loadingModal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none; /* Toggle via JS */
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #loadingModal .modal-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 10px 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 180px;
+      text-align: center;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* New Styles */
+
+    /* Add border to contact form */
+    #contactForm {
+      border: 2px solid #ff69b4; /* pink border */
+      padding: 20px;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.05); /* slightly transparent */
+    }
+
+    /* Adjust WhatsApp button position to avoid overlapping back-to-top */
+    #back-to-top {
+      bottom: 100px; /* move up */
+      right: 20px;
+      position: fixed;
+      z-index: 1100; /* above WhatsApp button */
+    }
+
+    a.btn.btn-success.position-fixed {
+      bottom: 20px; /* stays at bottom */
+      right: 20px;
+      z-index: 1050; /* behind back-to-top */
+    }
+  </style>
+  
+</head>
+<body>
+
+<div id="loadingModal">
+  <div class="modal-content">
+    <div class="spinner"></div>
+    <div class="modal-text">Loading, please wait...</div>
+  </div>
+</div>
+
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg fixed-top bg-trans" data-aos="fade-down">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#">Blessing</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="images/menu.svg" alt="Menu">
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0"></ul>
+      <div class="d-flex my-2 my-lg-0 top_link">
+        <a href="#projects" class="nav-link text-white">Projects</a>
+        <a href="#contact" class="nav-link text-white">Contact</a>
+        <a href="resume/Blessing Obulor CV.pdf" download class="nav-link text-white">Resume</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Body -->
+<div id="preloader" style="display: none;">
+  <div id="loader"></div>
+</div>
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <center>
+        <div class="col-md-12 header mb-5 intro-height" data-aos="fade-up">
+          <h1 class="mt-header text-white">Blessing Obulor</h1>
+          <p class="mt-1 text-white" data-aos="fade-up" data-aos-delay="200">
+            I'm a <b id="typed-output" style="color: pink"></b>,I build fast, scalable web and mobile apps with React, TypeScript, Flutter, Laravel, PHP, MySQL, and Supabase—optimized for performance.
+          </p>
+
+          <div class="mt-5 accounts" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://www.linkedin.com/in/blessing-obulor-462b80212" class="text-white" target="_blank">
+              <img class="drag" src="images/linkedin.svg" alt=""> LinkedIn
+            </a>
+            <a href="https://github.com/Blessingobulor" class="m-4 text-white" target="_blank">
+              <img class="drag" src="images/github.svg" alt=""> Github
+            </a>
+          </div>
+        </div>
+      </center>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="selected-title" id="projects" data-aos="fade-up">
+      <center>
+        <hr width="10px" class="bg-white">
+        <h6 class="text-white">PROJECTS</h6>
+        <hr width="10px" class="bg-white">
+      </center>
+    </div>
+
+    <!-- First Project -->
+    <div class="row mt-5 mb-5" data-aos="fade-up">
+      <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+        <h5 class="text-pink mt-2">Solar Load Estimator</h5>
+        <div class="project-tags d-flex flex-wrap mb-3">
+          <div class="tags m-1">Web development</div>
+          <div class="tags m-1">Laravel</div>
+          <div class="tags m-1">PHP</div>
+          <div class="tags m-1">Mysql</div>
+          <div class="tags m-1">Html</div>
+          <div class="tags m-1">Css</div>
+          <div class="tags m-1">Javascript</div>
+        </div>
+        <p class="text-white mt-2 h7">
+          The Solar Load Estimator helps users determine the ideal solar setup for their homes or businesses. Users can select appliances, specify quantities, and the system automatically calculates total power consumption Users can download a detailed quote for decision-making
+        </p>
+        <button class="mt-3 details-btn" onclick="link('calculator.novelsolar.com')">View live project</button>
+        <br><br>
+        <a href="https://github.com/Blessingobulor/Solar-Load-Estimator">
+          <img height="30" width="30" class="me-2" src="images/github.svg" alt="">
+        </a>
+      </div>
+      <div class="col-md-7" data-aos="fade-left">
+        <div class="shadow" style="width: 100%; height: 100%">
+          <center>
+            <img class="mt-3" src="images/solar-estimator.png" alt="" draggable="false" width="100%" height="100%" style="border-radius: 8px"> 
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Project -->
+    <div class="row mt-5 mb-5" data-aos="fade-up">
+      <div class="col-md-7 mb-4 mb-md-0" data-aos="fade-left">
+        <div class="shadow" style="width: 100%; height: 100%; border-radius: 20px">
+          <center>
+            <img class="mt-3 rounded" src="images/stock_reconsilation_system_mockup.png" draggable="false" width="100%" height="100%">
+          </center>
+        </div>
+      </div>
+      <div class="col-md-5" data-aos="fade-right">
+        <h5 class="text-pink mt-2">Stock Reconsilation System</h5>
+        <div class="project-tags d-flex flex-wrap mb-3">
+          <div class="tags m-1">Web development</div>
+          <div class="tags m-1">PHP</div>
+          <div class="tags m-1">Mysql</div>
+          <div class="tags m-1">Html</div>
+          <div class="tags m-1">Css</div>
+          <div class="tags m-1">Javascript</div>
+        </div>
+        <p class="text-white mt-2 h7">
+          The Stock Reconciliation System Software is a comprehensive tool designed to simplify and automate stock management processes. It empowers users by: Seamlessly tracking stock movements. Automatically calculating inventory levels
+        </p>
+        <a href="https://github.com/Blessingobulor/stock-reconciliation-system" target="_blank" class="mt-3 details-btn" style="text-decoration: none;">
+          View live project
+        </a>
+        <br><br><br>
+        <a href="https://github.com/Blessingobulor/stock-reconciliation-system">
+          <img height="30" width="30" class="me-2" src="images/github.svg" alt="">
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="selected-title" id="contact" data-aos="fade-up">
+      <center class="mt-5">
+        <span class="text-white h6"><b>CONTACT</b></span>
+      </center>
+    </div>
+
+    <div class="col-md-6" data-aos="fade-right">
+      <h3 class="text-white">Leave a message for me →</h3>
+      <br>
+      <h6 class="text-white">I don't waste time to reply</h6>
+    </div>
+
+    <div class="col-md-6" data-aos="fade-left">
+      <form id="contactForm" action="https://formspree.io/f/mzzrqwkp" method="POST" onsubmit="return redirectToThankYou(event)">
+        <div class="form-group">
+          <input class="contact-inp" type="text" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-group mt-3">
+          <input class="contact-inp" type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="contact-inp" name="message" placeholder="Your message" rows="10" required></textarea>
+        </div>
+        <div class="form-group">
+          <button id="submitBtn" type="submit" class="sub-btn rounded mt-3 shadow">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <hr class="mt-5 bg-white">
+  </div>
+</div>
+
+<!-- Back to top button -->
+<button id="back-to-top" class="hidden">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+    <path d="M12 24c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12zm0-22c-5.524 0-10 4.476-10 10s4.476 10 10 10 10-4.476 10-10-4.476-10-10-10zm0 15h-2v-7h-3l5-5 5 5h-3z"></path>
+  </svg>
+</button>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/2347068204587?text=Hello%20Blessing%2C%20I%20just%20viewed%20your%20portfolio%20and%20would%20like%20you%20to%20work%20on%20a%20project%20for%20me." 
+   class="btn btn-success rounded-circle position-fixed d-flex align-items-center justify-content-center shadow" 
+   style="width: 60px; height: 60px; bottom: 20px; right: 20px; z-index: 1050; animation: bounce 2s infinite;" 
+   target="_blank" aria-label="Chat on WhatsApp">
+  <img src="images/icon.png" alt="WhatsApp" width="30" height="30">
+</a>
+
+<!-- Footer -->
+<footer class="container mb-3">
+  <center class="text-white h6">
+    <span>© <span id="year">2025</span></span>
+  </center>
+</footer>
+
+<!-- Scripts -->
+<script src="js/bootstrap.bundle.min_1.js" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+  });
+
+  window.addEventListener("load", () => {
+    document.getElementById("preloader").style.display = "none";
+
+    new Typed("#typed-output", {
+      strings: ['Full-Stack Software Engineer <span style="color:#00bcd4;">Delivering Modern Web and Mobile Experiences</span>'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 1000,
+      startDelay: 500,
+      loop: true,
+      html: true,
+    });
+
+    const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+      backToTopButton.style.display = window.pageYOffset > 100 ? "block" : "none";
+    });
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  function link(link) { window.open("https://" + link); }
+  document.getElementById("year").innerText = new Date().getFullYear();
+
+  function redirectToThankYou(event) {
+    event.preventDefault();
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+    const loadingModal = document.getElementById("loadingModal");
+
+    loadingModal.style.display = 'flex';  // Show loading
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        setTimeout(() => { window.location.href = 'thanks.html'; }, 1500);
+      } else {
+        response.json().then(data => {
+          alert(data.error || "Oops! Something went wrong.");
+          loadingModal.style.display = 'none';
+        });
+      }
+    }).catch(error => {
+      alert("Oops! Something went wrong. Please try again later.");
+      console.error('Form submission error:', error);
+      loadingModal.style.display = 'none';
+    });
+
+    return false;
+  }
+
+  document.addEventListener('click', function(event) {
+    const navbar = document.getElementById('collapsibleNavId');
+    const toggler = document.querySelector('.navbar-toggler');
+    const isClickInsideNav = navbar.contains(event.target) || toggler.contains(event.target);
+    if (!isClickInsideNav && navbar.classList.contains('show')) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+      bsCollapse.hide();
+    }
+  });
+
+  document.getElementById('loadingModal').style.display = 'block';
+  document.getElementById('loadingModal').style.display = 'none';
+</script>
+
+</body>
+</html>
