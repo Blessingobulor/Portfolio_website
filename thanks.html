@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thank You</title>
-  
+
+  <!-- SEO (IMPORTANT) -->
+  <meta name="description" content="Message sent successfully. Thank you for contacting me.">
+  <meta name="robots" content="noindex">
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -31,21 +35,10 @@
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       text-align: center;
-      max-width: 400px;
+      max-width: 420px;
       width: 90%;
       transform: translateY(20px);
-      animation: slideUp 0.8s ease-out forwards;
-    }
-
-    .message-box h1 {
-      color: #28a745;
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    .message-box p {
-      font-size: 1.1rem;
-      color: #555;
+      animation: slideUp 0.8s ease-out forwards, glow 3s infinite alternate;
     }
 
     .emoji {
@@ -55,21 +48,51 @@
       margin-bottom: 15px;
     }
 
-    .btn {
-      margin-top: 25px;
-      padding: 12px 25px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.3s, transform 0.2s;
+    h1 {
+      color: #28a745;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
 
-    .btn:hover {
+    p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .btn-group {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-primary:hover {
       background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe5d;
       transform: translateY(-2px);
     }
 
@@ -90,21 +113,64 @@
     }
 
     @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+      to { box-shadow: 0 10px 40px rgba(0, 123, 255, 0.25); }
+    }
+
+    @media (max-width: 480px) {
+      .message-box {
+        padding: 35px 20px;
       }
-      50% {
-        transform: translateY(-8px);
+
+      h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
+
 <body>
+
   <div class="message-box">
     <div class="emoji">✅</div>
+
     <h1>Thank You!</h1>
-    <p>Your message has been sent successfully.<br>We’ll get back to you shortly.</p>
-    <a href="index.html" class="btn">Back to Home</a>
+
+    <p>
+      Your message has been sent successfully.<br>
+      I’ll get back to you within 24 hours.
+    </p>
+
+    <div class="btn-group">
+
+      <a href="index.html" class="btn btn-primary">
+        ← Back to Portfolio
+      </a>
+
+      <!-- WhatsApp CTA -->
+      <a 
+        href="https://wa.me/2347068204587?text=Hi%20I%20just%20sent%20a%20message%20from%20your%20portfolio"
+        class="btn btn-whatsapp"
+        target="_blank"
+        rel="noopener"
+      >
+        Chat on WhatsApp
+      </a>
+
+    </div>
   </div>
+
+  <!-- Auto redirect after 5 seconds -->
+  <script>
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 5000);
+  </script>
+
 </body>
 </html>
