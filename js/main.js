@@ -142,7 +142,7 @@ document.getElementById('cvBtn').addEventListener('click', (e) => {
 /* TYPED TEXT */
 (function () {
   const el = document.getElementById('typedEl');
-  const words = ['Software Enginner', 'Mobile App Developer', 'Full-Stack Engineer', 'Backend & API Engineer', 'Shopify Developer'];
+  const words = ['Software Engineer', 'Mobile App Developer', 'Full-Stack Engineer', 'Backend & API Engineer', 'Shopify Developer'];
     
   let wi = 0, ci = 0, del = false;
   function tick() {
