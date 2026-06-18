@@ -1558,6 +1558,31 @@ textarea {
   flex-shrink: 0;
 }
 
+/* Responsive Fix for Mobile Viewports */
+@media (max-width: 768px) {
+  .mobile-grid, 
+  .mobile-grid.phone-right {
+    /* Stack elements vertically */
+    grid-template-columns: 1fr; 
+    /* Reduce the massive gap for smaller screens */
+    gap: 40px; 
+    /* Reset the text direction back to normal for stacked layout */
+    direction: ltr; 
+  }
+
+  /* Revert internal direction fixes since parent is no longer rtl */
+  .mobile-grid.phone-right .phone-wrap,
+  .mobile-grid.phone-right .rv-r {
+    direction: ltr;
+  }
+
+  /* Optional: Push the phone to the top or bottom on mobile */
+  .mobile-grid.phone-right .phone-wrap {
+    /* If you want the phone above the text on mobile, uncomment below: */
+    /* order: -1; */
+  }
+}
+
 /* ================================================================
    EXPERIENCE TIMELINE
 ================================================================ */
