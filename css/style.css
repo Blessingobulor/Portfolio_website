@@ -1558,27 +1558,51 @@ textarea {
   flex-shrink: 0;
 }
 
-/* ==========================================
-   Responsive Mobile Fix 
-   ========================================== */
+/* ==========================================================================
+   1. Desktop Grid Layout (Screens wider than 768px)
+   ========================================================================== */
+
+/* Standard layout: Phone on Left, Text on Right */
+.mobile-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Reversed layout: Text on Left, Phone perfectly on the Right */
+.mobile-grid.phone-right {
+  grid-template-columns: 1fr auto; /* Text takes available space, phone takes auto */
+}
+
+/* Force the phone wrapper to the absolute right side of its grid cell */
+.mobile-grid.phone-right .phone-wrap {
+  justify-content: flex-end; 
+}
+
+/* Clean up: Remove the old direction: rtl rules from your stylesheet */
+.mobile-grid.phone-right,
+.mobile-grid.phone-right .phone-wrap,
+.mobile-grid.phone-right .rv-r {
+  direction: ltr !important; /* Forces normal text direction */
+}
+
+
+/* ==========================================================================
+   2. Mobile Responsive Fix (Screens 768px and below)
+   ========================================================================== */
 @media (max-width: 768px) {
-  /* Stack the grid items vertically */
   .mobile-grid,
   .mobile-grid.phone-right {
-    grid-template-columns: 1fr;
-    gap: 40px; /* Reduce spacing slightly on mobile */
-    direction: ltr; /* Reset text direction so it reads naturally */
+    grid-template-columns: 1fr; /* Stacks everything in 1 column */
+    gap: 40px;
   }
 
-  /* Ensure elements inside the reversed layout inherit the correct alignment */
-  .mobile-grid.phone-right .phone-wrap,
-  .mobile-grid.phone-right .rv-r {
-    direction: ltr;
-  }
-
-  /* Center the phone container when stacked */
-  .phone-wrap {
-    order: -1; /* OPTIONAL: Put the phone on top of the text on mobile. Delete if you want text first. */
+  /* Centers both phones perfectly on mobile screens */
+  .phone-wrap,
+  .mobile-grid.phone-right .phone-wrap {
+    justify-content: center;
+    order: -1; /* Keeps the phone on top of the text on mobile viewports */
     width: 100%;
   }
 }
