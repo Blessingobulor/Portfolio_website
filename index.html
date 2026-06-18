@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Blessing Obulor Portfolio Website" />
-  <title>Blessing Obulor Portfoilio Website</title>
+  <title>Blessing Obulor Portfoilio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -75,7 +75,7 @@
       <div class="hero-pills rv" style="--d:.22s">
         <span class="pill">Flutter</span>
         <span class="pill">Dart</span>
-        <span class="pill">CI/CID</span>
+        <span class="pill">CI/CD</span>
         <span class="pill">PHP</span>
         <span class="pill">Laravel</span>
         <span class="pill">Supabase</span>
@@ -323,7 +323,7 @@
         <div class="sk-items">
           <div class="sk-row"><div class="sk-meta"><span>Shopify (Liquid + APIs)</span><span class="sk-pct">85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div></div>
           <div class="sk-row"><div class="sk-meta"><span>Bitrix24 CRM</span><span class="sk-pct">80%</span></div><div class="sk-bar"><div class="sk-fill" data-w="80"></div></div></div>
-          <div class="sk-row"><div class="sk-meta"><span>Git / Docker / CI-CD</span><span class="sk-pct">91%</span></div><div class="sk-bar"><div class="sk-fill" data-w="91"></div></div></div>
+          <div class="sk-row"><div class="sk-meta"><span>Git / Docker / CI/CD</span><span class="sk-pct">91%</span></div><div class="sk-bar"><div class="sk-fill" data-w="91"></div></div></div>
         </div>
       </div>
 
@@ -349,7 +349,7 @@
         <span class="m-badge">Paystack</span>
         <span class="m-badge">REST APIs</span>
         <span class="m-badge">JavaScript</span>
-        <span class="m-badge">CI/CID</span>
+        <span class="m-badge">CI/CD</span>
         <span class="m-badge">Webhooks</span>
 
         <!-- duplicate for loop effect -->
@@ -370,7 +370,7 @@
         <span class="m-badge">Paystack</span>
         <span class="m-badge">REST APIs</span>
         <span class="m-badge">JavaScript</span>
-        <span class="m-badge">CI/CID</span>
+        <span class="m-badge">CI/CD</span>
         <span class="m-badge">Webhooks</span>
       </div>
     </div>
@@ -481,7 +481,7 @@
 </section>
 
 <!-- ================================================================
-     MOBILE APP SHOWCASE 
+     MOBILE APP SHOWCASE SECTION 1
 ================================================================ -->
 <section id="apps" class="sec" aria-labelledby="apps-title">
   <div class="wrap">
@@ -490,6 +490,8 @@
       <h2 class="sec-title" id="apps-title">Mobile App Showcase</h2>
       <p class="sec-sub">Cross-platform Flutter applications built for iOS and Android, focusing on performance, scalability, and user experience.</p>
     </div>
+
+    <!-- First Entry — Phone Left -->
     <div class="mobile-grid">
       <div class="phone-wrap rv-l">
         <div class="phone">
@@ -503,11 +505,10 @@
                 muted
                 playsinline
                 preload="metadata"
-                aria-label="NovelSolar app screen recording"
+                aria-label="Spotify"
               ></video>
-              <!-- Poster / fallback shown before video loads or if no src -->
               <div class="ph-video-poster" id="phPoster">
-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=540&fit=crop" alt="NovelSolar app preview" />
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=540&fit=crop" alt="Spotify redesign app preview" />
                 <div class="ph-play-overlay" id="phPlayOverlay">
                   <button class="ph-play-btn" id="phPlayBtn" aria-label="Play app demo video">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
@@ -515,7 +516,6 @@
                   <span>Watch App Demo</span>
                 </div>
               </div>
-              <!-- Video controls bar -->
               <div class="ph-vid-controls" id="phVidControls">
                 <button class="ph-ctrl-btn" id="phTogglePlay" aria-label="Play / Pause">
                   <svg id="phPlayIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
@@ -536,60 +536,154 @@
         <div class="phone-glow"></div>
       </div>
 
-  <div class="rv-r">
-  <div class="app-badges">
-    <span class="ab flutter">Flutter</span>
-    <span class="ab api">Audio Streaming</span>
-    <span class="ab state">State Management</span>
-    <span class="ab cross">iOS + Android</span>
+      <div class="rv-r">
+        <div class="app-badges">
+          <span class="ab flutter">Flutter</span>
+          <span class="ab api">Audio Streaming</span>
+          <span class="ab state">State Management</span>
+          <span class="ab cross">iOS + Android</span>
+        </div>
+
+
+        <h3 class="app-title">Music Streaming App (Spotify Redesign)</h3>
+
+        <p class="app-desc">
+          A Flutter-based music streaming application inspired by Spotify, featuring a modern UI redesign, smooth audio playback, playlist management, and a scalable architecture for cross-platform mobile devices.
+        </p>
+
+        <ul class="feat-list">
+          <li class="feat">
+            <span class="feat-icon">✦</span>
+            <span>Built custom audio engine with background playback handling</span>
+          </li>
+          <li class="feat">
+            <span class="feat-icon">✦</span>
+            <span>Implemented persistent playlist storage with local database caching</span>
+          </li>
+          <li class="feat">
+            <span class="feat-icon">✦</span>
+            <span>Designed state-driven media control layer for cross-screen sync</span>
+          </li>
+          <li class="feat">
+            <span class="feat-icon">✦</span>
+            <span>State management for efficient media control across screens</span>
+          </li>
+          <li class="feat">
+            <span class="feat-icon">✦</span>
+            <span>Optimized UI rendering for smooth 60fps transitions on low-end devices</span>
+          </li>
+        </ul>
+
+        <div class="app-actions">
+          <a href="#" class="btn-p">View Case Study</a>
+          <a href="#" class="btn-s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download APK
+          </a>
+          <a href="https://github.com/Blessingobulor/spotify_media_player_redesign" class="btn-g">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <!-- END first .mobile-grid -->
+
+    <!-- Second Entry — Phone Right -->
+<div class="mobile-grid phone-right" style="margin-top: 80px;">
+
+  <div class="rv-l">
+    <div class="app-badges">
+      <span class="ab flutter">Flutter</span>
+      <span class="ab supabase">Riverpod State Management</span>
+      <span class="ab firebase">Hive</span>
+      <span class="ab android">iOS + Android</span>
+    </div>
+
+    <h3 class="app-title">Jimi VoiceCalc — AI-Powered Calculator</h3>
+
+    <p class="app-desc">
+      A cutting-edge, hands-free mobile calculator built with Flutter. By leveraging artificial 
+      intelligence voice recognition, it captures spoken mathematical input, transcribes the speech 
+      in real time, and instantly parses the words into structured mathematical syntax for immediate evaluation.
+    </p>
+
+    <ul class="feat-list">
+      <li class="feat">
+        <span class="feat-icon">✦</span>
+        <span>Real-time ASR engine for instant voice-to-text mathematical transcription</span>
+      </li>
+      <li class="feat">
+        <span class="feat-icon">✦</span>
+        <span>Custom semantic parser translates natural language phrases into math expressions</span>
+      </li>
+      <li class="feat">
+        <span class="feat-icon">✦</span>
+        <span>Interactive scrollable session log keeps a clean history of active calculations</span>
+      </li>
+      <li class="feat">
+        <span class="feat-icon">✦</span>
+        <span>Engineered with an accessible, hands-free interface optimized for speed and utility</span>
+      </li>
+    </ul>
+
+    <div class="app-actions">
+      <a href="#" class="btn-p">View Case Study</a>
+      <a href="#" class="btn-s">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Download APK
+      </a>
+      <a href="https://github.com/Blessingobulor/Jimi_Ai_voice_Calc" class="btn-g">GitHub</a>
+    </div>
   </div>
 
-  <h3 class="app-title">Music Streaming App (Spotify Redesign)</h3>
-
-  <p class="app-desc">
-    A Flutter-based music streaming application inspired by Spotify, featuring a modern UI redesign, smooth audio playback, playlist management, and a scalable architecture for cross-platform mobile devices.
-  </p>
-
-  <ul class="feat-list">
-    <li class="feat">
-      <span class="feat-icon">✦</span>
-      <span>Built custom audio engine with background playback handling</span>
-    </li>
-
-    <li class="feat">
-      <span class="feat-icon">✦</span>
-      <span>Implemented persistent playlist storage with local database caching</span>
-    </li>
-
-    <li class="feat">
-      <span class="feat-icon">✦</span>
-      <span>Designed state-driven media control layer for cross-screen sync</span>
-    </li>
-
-    <li class="feat">
-      <span class="feat-icon">✦</span>
-      <span>State management for efficient media control across screens</span>
-    </li>
-
-    <li class="feat">
-      <span class="feat-icon">✦</span>
-      <span>Optimized UI rendering for smooth 60fps transitions on low-end devices</span>
-    </li>
-  </ul>
-
-  <div class="app-actions">
-    <a href="#" class="btn-p">View Case Study</a>
-
-    <a href="#" class="btn-s">
-      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-      </svg>
-      Download APK
-    </a>
-
-    <a href="https://github.com/Blessingobulor/spotify_media_player_redesign" class="btn-g">GitHub</a>
+  <div class="phone-wrap rv-l">
+    <div class="phone">
+      <div class="ph-notch"></div>
+      <div class="ph-screen">
+        <div class="ph-video-wrap">
+          <video
+            src="video/Jimi VoiceCalc Ai.mp4"
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            aria-label="NovelSolar app demo"
+          ></video>
+          <div class="ph-video-poster">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=540&fit=crop" alt="NovelSolar app preview" />
+            <div class="ph-play-overlay">
+              <button class="ph-play-btn" aria-label="Play NovelSolar demo video">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+              </button>
+              <span>Watch App Demo</span>
+            </div>
+          </div>
+          <div class="ph-vid-controls">
+            <button class="ph-ctrl-btn" id="phTogglePlay" aria-label="Play / Pause">
+                  <svg id="phPlayIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                  <svg id="phPauseIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                </button>
+                <div class="ph-progress-wrap">
+                  <div class="ph-progress-bar"><div class="ph-progress-fill" id="phProgressFill"></div></div>
+                </div>
+                <button class="ph-ctrl-btn" id="phMuteBtn" aria-label="Toggle mute">
+                  <svg id="phMuteIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+                  <svg id="phUnmuteIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+                </button>
+          </div>
+        </div>
+      </div>
+      <div class="ph-home"></div>
+    </div>
+    <div class="phone-glow"></div>
   </div>
+
 </div>
+    <!-- END second .mobile-grid -->
+
+  </div>
 </section>
 
 
@@ -613,28 +707,25 @@
         <h3>Lead Software Engineer</h3>
         <span class="tl-co">NovelSolar Integrated Services Ibadan, Oyo State, Nigeria (Onsite)</span>
       </div>
-      <span class="tl-date">2023 — 2026</span>
+      <span class="tl-date">June 2023 — May 2026</span>
     </div>
 
     <ul class="feat-list">
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Led development of mobile and desktop applications using Flutter, and contributed to web development projects across multiple programming stacks, coordinating delivery across product modules</span>
+        <span>Led the development of mobile, web, and desktop applications using Flutter, Laravel, and React.</span>
       </li>
 
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Designed and maintained RESTful backend APIs supporting core business workflows and third-party integrations.</span>
+        <span>Architected and maintained scalable backend APIs supporting multiple business workflows and 
+            third-party integrations.
+    </span>
       </li>
 
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Improved app performance and stability through systematic debugging, profiling, and refactoring of critical components.</span>
-      </li>
-
-      <li class="feat">
-        <span class="feat-icon">✦</span>
-        <span>Defined reusable UI/UX patterns and component structure to ensure consistency across multiple products.</span>
+        <span>Collaborated with stakeholders to gather requirements and translate business needs into scalable software solutions</span>
       </li>
 
     </ul>
@@ -649,7 +740,7 @@
       <span>React</span>
       <span>Typescript</span>
       <span>Webhooks</span>
-      <span>CI/CID</span>
+      <span>CI/CD</span>
       <span>RESTful APIs</span>
       <span>Mysql</span>
       <span>Paystack</span>
@@ -657,7 +748,6 @@
   </div>
 </div>
 
-      
   <div class="tl-item rv" style="--d:.1s">
   <div class="tl-dot"></div>
 
@@ -667,29 +757,26 @@
         <h3>Software Engineer</h3>
         <span class="tl-co">Lyridra Technology — Lagos State, Nigeria (Remote)</span>
       </div>
-      <span class="tl-date">2025 — 2026</span>
+      <span class="tl-date">Febuary 2025 — June 2026</span>
     </div>
 
     <ul class="feat-list">
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Built full-stack applications across web and mobile platforms using Laravel, React, and Flutter.</span>
+        <span>Developed and maintained full-stack applications across web and mobile platforms using Flutter, Laravel.</span>
       </li>
 
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Developed and maintained scalable RESTful APIs using Laravel to ensure reliable data flow across systems.</span>
+        <span>Designed and implemented scalable REST APIs supporting business-critical workflows and third-party integrations.</span>
       </li>
 
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Improved application performance and cross-device compatibility through optimization and responsive design practices.</span>
+        <span>Improved application performance and cross-device compatibility through optimization and       responsive design Practices
+      </span>
       </li>
 
-      <li class="feat">
-        <span class="feat-icon">✦</span>
-        <span>Collaborated with remote engineering teams to deliver production-ready features and maintain code quality.</span>
-      </li>
     </ul>
 
     <div class="tl-tags">
@@ -704,7 +791,7 @@
   </div>
 </div>
 
-<div class="tl-item rv" style="--d:.1s">
+  <div class="tl-item rv" style="--d:.1s">
   <div class="tl-dot"></div>
 
   <div class="tl-card card">
@@ -713,28 +800,26 @@
         <h3>Front-end Developer (React)</h3>
         <span class="tl-co">InvoiSmart — Lagos State, Nigeria (Remote)</span>
       </div>
-      <span class="tl-date">2025 — 2026</span>
+      <span class="tl-date">October 2025 — Febuary 2026</span>
     </div>
 
     <ul class="feat-list">
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Improved user engagement by redesigning responsive UI components using React.</span>
+        <span>Redesigned responsive user interfaces using React and TypeScript, improving  usability across  desktop and mobile devices.
+</span>
       </li>
 
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Integrated 20+ backend APIs to ensure accurate and consistent data flow across the application.</span>
+        <span>Integrated 20+ REST APIs, ensuring seamless data exchange between frontend and backend systems.</span>
       </li>
 
       <li class="feat">
         <span class="feat-icon">✦</span>
-        <span>Optimized frontend performance by reducing unnecessary re-renders and improving rendering efficiency.</span>
-      </li>
-
-      <li class="feat">
-        <span class="feat-icon">✦</span>
-        <span>Implemented form validation, error handling, and loading states to enhance user experience.</span>
+        <span>Implemented robust form validation, error handling, and loading states, improving user 
+          Experience and application reliability. 
+      </span>
       </li>
     </ul>
 
@@ -743,9 +828,13 @@
       <span>Typescript</span>
       <span>Tailwind Css</span>
       <span>npm</span>
+      <span>Vite</span>
     </div>
   </div>
 </div>
+
+  
+
 
       
    <div class="tl-item rv" style="--d:.3s">
@@ -1192,14 +1281,14 @@
         <div class="ft-socials">
 
           <!-- GitHub -->
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+          <a href="https://github.com/Blessingobulor" target="_blank" rel="noopener" aria-label="GitHub">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.8 1.2 1.8 1.2 1 1.8 2.6 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.4-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5z"/>
             </svg>
           </a>
 
           <!-- LinkedIn -->
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/blessing-obulor/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.5h.1c.5-.9 1.6-1.9 3.3-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3zM5.3 7.4A2.1 2.1 0 1 1 5.3 3a2.1 2.1 0 0 1 0 4.4zM3.6 20.4h3.6V9H3.6v11.4z"/>
             </svg>
@@ -1207,7 +1296,7 @@
 
           <!-- WhatsApp (custom message) -->
           <a
-            href="https://wa.me/234XXXXXXXXXX?text=Hi%20Blessing%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+            href="https://wa.me/2347068204587?text=Hi%20Blessing%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
             target="_blank"
             rel="noopener"
             aria-label="WhatsApp"

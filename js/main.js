@@ -249,128 +249,109 @@ document.querySelectorAll('.f-btn').forEach(btn => {
 })();
 
 /* PHONE VIDEO PLAYER */
+/* PHONE VIDEO PLAYERS — generic, handles all instances */
 (function () {
-  const video      = document.getElementById('phVideo');
-  const poster     = document.getElementById('phPoster');
-  const playOverlay = document.getElementById('phPlayOverlay');
-  const playBtn    = document.getElementById('phPlayBtn');
-  const wrap       = document.getElementById('phVideoWrap');
-  const toggleBtn  = document.getElementById('phTogglePlay');
-  const muteBtn    = document.getElementById('phMuteBtn');
-  const fill       = document.getElementById('phProgressFill');
-  const playIcon   = document.getElementById('phPlayIcon');
-  const pauseIcon  = document.getElementById('phPauseIcon');
-  const muteIcon   = document.getElementById('phMuteIcon');
-  const unmuteIcon = document.getElementById('phUnmuteIcon');
+  document.querySelectorAll('.ph-video-wrap').forEach(wrap => {
+    const video      = wrap.querySelector('video');
+    const poster     = wrap.querySelector('.ph-video-poster');
+    const playBtn    = wrap.querySelector('.ph-play-btn');
+    const toggleBtn  = wrap.querySelector('.ph-ctrl-btn[aria-label="Play / Pause"]');
+    const muteBtn    = wrap.querySelector('.ph-ctrl-btn[aria-label="Toggle mute"]');
+    const fill       = wrap.querySelector('.ph-progress-fill');
+    const playIcon   = wrap.querySelector('[id^="phPlayIcon"]');
+    const pauseIcon  = wrap.querySelector('[id^="phPauseIcon"]');
+    const muteIcon   = wrap.querySelector('[id^="phMuteIcon"]');
+    const unmuteIcon = wrap.querySelector('[id^="phUnmuteIcon"]');
 
-  if (!video) return;
+    if (!video) return;
 
-  // Attempt autoplay on section visible //
-  const appsSection = document.getElementById('apps');
-  let autoPlayed = false;
-
-  const sectionObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !autoPlayed) {
-        autoPlayed = true;
-        attemptPlay();
-      }
-    });
-  }, { threshold: 0.4 });
-  if (appsSection) sectionObs.observe(appsSection);
-
-  function attemptPlay() {
-    // Only attempt if video has a real src (not placeholder)
-    if (!video.src || video.src.includes('novelsolar-demo.mp4')) {
-      // No real video yet — keep poster visible
-      // When you add a real video file, this will autoplay
+    function hidePoster() {
+      if (poster) poster.style.display = 'none';
     }
-    video.muted = true;
-    const promise = video.play();
-    if (promise !== undefined) {
-      promise.then(() => {
-        hidePoster();
-        wrap.classList.add('playing');
-        setPlayState(true);
-      }).catch(() => {
-        // Autoplay blocked — keep poster, wait for user click
+
+    function setPlayState(playing) {
+      if (playIcon)  playIcon.style.display  = playing ? 'none' : '';
+      if (pauseIcon) pauseIcon.style.display = playing ? ''     : 'none';
+    }
+
+    // ── Autoplay when scrolled into view ────────────
+    let autoPlayed = false;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !autoPlayed) {
+          autoPlayed = true;
+          obs.disconnect();
+          video.muted = true;
+          video.load();
+          video.play().then(() => {
+            hidePoster();
+            wrap.classList.add('playing');
+            setPlayState(true);
+          }).catch(() => {});
+        }
+      });
+    }, { threshold: 0.2 });
+    obs.observe(wrap);
+
+    // ── Poster play button ───────────────────────────
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        video.muted = true;
+        video.load();
+        video.play().then(() => {
+          hidePoster();
+          wrap.classList.add('playing');
+          setPlayState(true);
+        }).catch(err => console.warn('Video play failed:', err));
       });
     }
-  }
 
-  // Play button on poster //
-  if (playBtn) {
-    playBtn.addEventListener('click', () => {
-      video.muted = true;
-      video.play().then(() => {
-        hidePoster();
-        wrap.classList.add('playing');
-        setPlayState(true);
-      }).catch(err => console.warn('Video play failed:', err));
+    // ── Play / Pause toggle ──────────────────────────
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          wrap.classList.add('playing');
+          setPlayState(true);
+        } else {
+          video.pause();
+          wrap.classList.remove('playing');
+          setPlayState(false);
+        }
+      });
+    }
+
+    // ── Mute toggle ──────────────────────────────────
+    if (muteBtn) {
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        if (muteIcon)   muteIcon.style.display   = video.muted ? ''     : 'none';
+        if (unmuteIcon) unmuteIcon.style.display = video.muted ? 'none' : '';
+      });
+    }
+
+    // ── Progress bar ─────────────────────────────────
+    video.addEventListener('timeupdate', () => {
+      if (!video.duration || !fill) return;
+      fill.style.width = (video.currentTime / video.duration * 100) + '%';
     });
-  }
 
-  function hidePoster() {
-    if (poster) poster.style.display = 'none';
-  }
+    const progressBar = wrap.querySelector('.ph-progress-bar');
+    if (progressBar) {
+      progressBar.addEventListener('click', e => {
+        const rect = progressBar.getBoundingClientRect();
+        video.currentTime = ((e.clientX - rect.left) / rect.width) * video.duration;
+      });
+    }
 
-  // ── Play / Pause toggle ──────────────────────
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      if (video.paused) {
-        video.play();
-        wrap.classList.add('playing');
-        setPlayState(true);
-      } else {
-        video.pause();
-        wrap.classList.remove('playing');
-        setPlayState(false);
-      }
-    });
-  }
-
-  function setPlayState(playing) {
-    if (!playIcon || !pauseIcon) return;
-    playIcon.style.display  = playing ? 'none' : '';
-    pauseIcon.style.display = playing ? '' : 'none';
-  }
-
-  // ── Mute toggle ──────────────────────────────
-  if (muteBtn) {
-    muteBtn.addEventListener('click', () => {
-      video.muted = !video.muted;
-      muteIcon.style.display   = video.muted ? '' : 'none';
-      unmuteIcon.style.display = video.muted ? 'none' : '';
-    });
-  }
-
-  // ── Progress bar ─────────────────────────────
-  video.addEventListener('timeupdate', () => {
-    if (!video.duration) return;
-    const pct = (video.currentTime / video.duration) * 100;
-    if (fill) fill.style.width = pct + '%';
+    // ── Sync UI with native play/pause events ────────
+    video.addEventListener('play',  () => { setPlayState(true);  wrap.classList.add('playing'); });
+    video.addEventListener('pause', () => { setPlayState(false); wrap.classList.remove('playing'); });
   });
-
-  // Clickable progress
-  const progressBar = document.querySelector('.ph-progress-bar');
-  if (progressBar) {
-    progressBar.addEventListener('click', e => {
-      const rect = progressBar.getBoundingClientRect();
-      const pct  = (e.clientX - rect.left) / rect.width;
-      video.currentTime = pct * video.duration;
-    });
-  }
-
-  // ── Loop & state on end ──────────────────────
-  video.addEventListener('ended', () => {
-    // Video is set to loop via HTML attribute, but reset UI just in case
-    setPlayState(false);
-    wrap.classList.remove('playing');
-  });
-
-  video.addEventListener('play',  () => { setPlayState(true);  wrap.classList.add('playing'); });
-  video.addEventListener('pause', () => { setPlayState(false); wrap.classList.remove('playing'); });
 })();
+
+
+
 
 /* ── TESTIMONIALS CAROUSEL ───────────────────── */
 (function () {

@@ -1243,14 +1243,29 @@ textarea {
   justify-content: center;
 }
 
+
+.mobile-grid.phone-right {
+  grid-template-columns: 1fr auto;
+  direction: rtl; 
+}
+
+
+.mobile-grid.phone-right .phone-wrap,
+.mobile-grid.phone-right .rv-r {
+  direction: ltr;
+}
+
 .phone {
   width: 236px;
+  height: 462px; /* Explicitly guarantees the exact internal total area fits */
+  box-sizing: content-box; /* Forces borders to stay outside of the calculation */
   background: #131B2B;
   border-radius: 38px;
   border: 7px solid #1E2B3E;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
+  flex-shrink: 0; /* Prevents parent containers from crushing it */
 }
 
 .ph-notch {
@@ -1523,6 +1538,24 @@ textarea {
   gap: 0.75rem;
   flex-wrap: wrap;
   margin-bottom: 1.4rem;
+}
+
+.mobile-grid.phone-right {
+  grid-template-columns: 1fr auto;
+  align-items: center; 
+}
+
+
+.mobile-grid.phone-right .phone-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+
+.mobile-grid.phone-right .phone {
+  flex-shrink: 0;
 }
 
 /* ================================================================
