@@ -41,7 +41,8 @@
 
 
 .btn-s {
-  color: var(--text); /* IMPORTANT */
+  color: var(--text);
+  /* IMPORTANT */
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -1246,7 +1247,7 @@ textarea {
 
 .mobile-grid.phone-right {
   grid-template-columns: 1fr auto;
-  direction: rtl; 
+  direction: rtl;
 }
 
 
@@ -1257,15 +1258,15 @@ textarea {
 
 .phone {
   width: 236px;
-  height: 470px; 
-  box-sizing: content-box; 
+  height: 470px;
+  box-sizing: content-box;
   background: #131B2B;
   border-radius: 38px;
   border: 7px solid #1E2B3E;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .ph-notch {
@@ -1544,7 +1545,7 @@ textarea {
 
 .mobile-grid.phone-right {
   grid-template-columns: 1fr auto;
-  align-items: center; 
+  align-items: center;
 }
 
 
@@ -1574,19 +1575,21 @@ textarea {
 
 /* Reversed layout: Text on Left, Phone perfectly on the Right */
 .mobile-grid.phone-right {
-  grid-template-columns: 1fr auto; /* Text takes available space, phone takes auto */
+  grid-template-columns: 1fr auto;
+  /* Text takes available space, phone takes auto */
 }
 
 /* Force the phone wrapper to the absolute right side of its grid cell */
 .mobile-grid.phone-right .phone-wrap {
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
 /* Clean up: Remove the old direction: rtl rules from your stylesheet */
 .mobile-grid.phone-right,
 .mobile-grid.phone-right .phone-wrap,
 .mobile-grid.phone-right .rv-r {
-  direction: ltr !important; /* Forces normal text direction */
+  direction: ltr !important;
+  /* Forces normal text direction */
 }
 
 
@@ -1594,9 +1597,11 @@ textarea {
    2. Mobile Responsive Fix (Screens 768px and below)
    ========================================================================== */
 @media (max-width: 768px) {
+
   .mobile-grid,
   .mobile-grid.phone-right {
-    grid-template-columns: 1fr; /* Stacks everything in 1 column */
+    grid-template-columns: 1fr;
+    /* Stacks everything in 1 column */
     gap: 40px;
   }
 
@@ -1604,7 +1609,8 @@ textarea {
   .phone-wrap,
   .mobile-grid.phone-right .phone-wrap {
     justify-content: center;
-    order: -1; /* Keeps the phone on top of the text on mobile viewports */
+    order: -1;
+    /* Keeps the phone on top of the text on mobile viewports */
     width: 100%;
   }
 }
